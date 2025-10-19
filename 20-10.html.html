@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bức thư 20-10 lớp 11C1</title>
+<style>
+  body {
+    margin: 0;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  .intro {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at center, #ffb6c1, #ff4081);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 2s ease-in-out;
+    z-index: 5;
+  }
+  h1 {
+    font-size: 2.5em;
+    text-shadow: 0 0 10px #fff, 0 0 20px #ff1493;
+    text-align: center;
+    padding: 0 10px;
+  }
+  button {
+    margin-top: 25px;
+    padding: 12px 30px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 30px;
+    background: #fff;
+    color: #ff1493;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+  }
+  button:hover {
+    background: #ffe4ec;
+    transform: scale(1.05);
+  }
+  .letter {
+    display: none;
+    min-height: 100vh;
+    padding: 80px 10%;
+    background: linear-gradient(to bottom right, #ff99cc, #ffe6f0);
+    color: #4a0048;
+    font-size: 1.2em;
+    line-height: 1.8;
+    background-attachment: fixed;
+  }
+  .text {
+    background: rgba(255,255,255,0.85);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 0 25px rgba(255,182,193,0.6);
+    white-space: pre-line;
+  }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+  @keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+  }
+  .floating {
+    position: fixed;
+    width: 20px; height: 20px;
+    background: pink;
+    border-radius: 50%;
+    animation: float 4s ease-in-out infinite;
+    opacity: 0.7;
+  }
+  #musicToggle {
+    position: fixed;
+    bottom: 20px;
+    right: 25px;
+    background: rgba(255,255,255,0.85);
+    border: none;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(255, 182, 193, 0.8);
+    transition: transform 0.3s;
+    z-index: 10;
+  }
+  #musicToggle:hover {
+    transform: scale(1.15);
+  }
+</style>
+</head>
+<body>
+
+<!-- Nhạc nền -->
+<audio id="bgMusic" loop>
+  <source src="https://cdn.pixabay.com/download/audio/2023/03/20/audio_746879d5a9.mp3?filename=soft-guitar-bgm-140356.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Trang mở đầu -->
+<div class="intro" id="intro">
+  <h1>💖 Bức thư 20-10 dành tặng<br>các bạn nữ lớp 11C1 💖</h1>
+  <button onclick="openLetter()">💌 Mở thư 💌</button>
+</div>
+
+<!-- Trang thư chính -->
+<div class="letter" id="letter">
+  <div class="text" id="text"></div>
+</div>
+
+<!-- Nút bật/tắt nhạc -->
+<button id="musicToggle" onclick="toggleMusic()">🔊</button>
+
+<script>
+const message = 
+`🎀 Thư gửi những bông hoa xinh đẹp của lớp 11C1 🎀
+
+Gửi đến các bạn nữ 11C1 thân mến,
+
+Nhân dịp đặc biệt này, chúng tớ – những chàng trai của 11C1 – muốn gửi đến các cậu những lời chúc chân thành nhất. 
+Cảm ơn vì các cậu đã luôn là một phần tuyệt vời của lớp, mang đến niềm vui, tiếng cười và cả sự dịu dàng khiến 11C1 trở nên đặc biệt hơn bao giờ hết. 🌷
+
+Chúc các cậu luôn xinh đẹp, tự tin, học giỏi và hạnh phúc mỗi ngày. 
+Dù là trong học tập hay cuộc sống, hãy luôn tỏa sáng theo cách của riêng mình nhé! ✨
+Mong rằng nụ cười sẽ luôn nở trên môi các cậu – vì chỉ cần một nụ cười thôi cũng đủ làm cả lớp bừng sáng.
+
+Cảm ơn vì đã luôn đồng hành, cùng chúng tớ tạo nên thật nhiều kỷ niệm đáng nhớ trong suốt những năm tháng cấp 3.
+Chúng tớ mong rằng, 11C1 sẽ mãi là một tập thể đoàn kết, nơi mà mỗi cô gái đều cảm nhận được niềm vui, sự trân trọng và yêu thương từ các bạn nam. 💖
+
+Chúc những “bông hoa 11C1” của chúng tớ:
+🌼 Luôn vui vẻ như nắng ban mai
+🌸 Tươi trẻ như hoa nở mùa xuân
+🌺 Dịu dàng nhưng mạnh mẽ
+💐 Và luôn được yêu thương thật nhiều!
+
+Thân gửi,
+Tập thể nam sinh lớp 11C1 💙`;
+
+const music = document.getElementById("bgMusic");
+let isPlaying = false;
+
+function openLetter() {
+  const intro = document.getElementById("intro");
+  const letter = document.getElementById("letter");
+  intro.style.animation = "fadeOut 1.5s forwards";
+  setTimeout(() => {
+    intro.style.display = "none";
+    letter.style.display = "block";
+    typeText();
+    playMusic(); 
+  }, 1500);
+}
+
+function typeText() {
+  const textEl = document.getElementById("text");
+  let i = 0;
+  function typing() {
+    if (i < message.length) {
+      textEl.innerHTML += message.charAt(i);
+      i++;
+      setTimeout(typing, 35);
+    }
+  }
+  typing();
+}
+
+function playMusic() {
+  music.play().then(() => {
+    isPlaying = true;
+    document.getElementById("musicToggle").innerText = "🔊";
+  }).catch(() => {
+    console.log("Chờ tương tác để phát nhạc...");
+  });
+}
+
+function toggleMusic() {
+  if (isPlaying) {
+    music.pause();
+    document.getElementById("musicToggle").innerText = "🔈";
+  } else {
+    music.play();
+    document.getElementById("musicToggle").innerText = "🔊";
+  }
+  isPlaying = !isPlaying;
+}
+
+// Hiệu ứng tim/hoa bay
+for (let i = 0; i < 30; i++) {
+  const heart = document.createElement("div");
+  heart.classList.add("floating");
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.top = Math.random() * 100 + "vh";
+  heart.style.background = Math.random() > 0.5 ? "pink" : "#ff4081";
+  heart.style.animationDuration = (3 + Math.random() * 5) + "s";
+  document.body.appendChild(heart);
+}
+</script>
+
+</body>
+</html>
